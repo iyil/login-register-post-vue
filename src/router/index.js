@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Home from '@/components/Home'
+import Parent from '@/components/sendMessage/Parent'
 
 Vue.use(Router)
 
@@ -28,7 +29,14 @@ export default new Router({
       path: '/Home',
       name: 'Home',
       component: Home,
-      meta: {requireLogin : true}
+      meta: {requireLogin : true},
+      children:[
+        {
+          path: 'sendMessage',
+          name: 'sendMessage',
+          component: Parent
+        }
+      ]
     }
   ]
 })

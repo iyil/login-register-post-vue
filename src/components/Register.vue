@@ -40,8 +40,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 #registerBox{
-  width: 400px;
-  height: 400px;
+  width: 340px;
+  height: 340px;
   position: absolute;
   left: 0;
   right: 0;
@@ -49,5 +49,10 @@ export default {
   bottom: 0;
   margin: auto;
   background-color: #ccc;
+}
+#registerBox input{
+  padding-left: 6px;
+  border: 1px solid #888;
+  height: 24px;
 }
 </style>
