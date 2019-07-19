@@ -18,21 +18,19 @@ export default {
   },
   methods: {
     login () {
-      this.$axios.post('http://localhost:8086/login',{username:this.username,password:this.password})
-      .then((response)=>{
-        if(response.success){
-          sessionStorage.setItem('loginInfo',this.username + '&&' + this.password);
-          this.$router.push({ name: 'Home'})
-        }
-        else if(!response.success&&response.status == 1){
-          alert(response.msg)
-        }
-        else if(!response.success&&response.status == 2){
-          alert(response.msg)
-        }
-      }).catch((response)=>{
-          console.log(response);
-      })
+      this.$axios.post('http://localhost:8086/login', {username: this.username, password: this.password})
+        .then((response) => {
+          if (response.success) {
+            sessionStorage.setItem('loginInfo', this.username + '&&' + this.password)
+            this.$router.push({name: 'Home'})
+          } else if (!response.success && response.status === 1) {
+            alert(response.msg)
+          } else if (!response.success && response.status === 2) {
+            alert(response.msg)
+          }
+        }).catch((response) => {
+          console.log(response)
+        })
     }
   }
 }

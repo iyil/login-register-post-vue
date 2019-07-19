@@ -20,18 +20,18 @@ export default {
   },
   methods: {
     register () {
-      console.log('点击注册');
-      this.$axios.post('http://localhost:8086/register',{username:this.username,password:this.password})
-      .then((response)=>{
-          if(response.success){
-            alert('注册成功');
-            this.$router.push({ name: 'Login'})
-          }else{
+      console.log('点击注册')
+      this.$axios.post('http://localhost:8086/register', {username: this.username, password: this.password})
+        .then((response) => {
+          if (response.success) {
+            alert('注册成功')
+            this.$router.push({name: 'Login'})
+          } else {
             alert(response.msg)
           }
-      }).catch((response)=>{
-          console.log(response);
-      })
+        }).catch((response) => {
+          console.log(response)
+        })
     }
   }
 }

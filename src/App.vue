@@ -17,6 +17,10 @@ html,body{
   width: 100%;
   height: 100%;
 }
+p{
+  margin: 0;
+  padding: 0;
+}
 #app{
   overflow: hidden;
 }

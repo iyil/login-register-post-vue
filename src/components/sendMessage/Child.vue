@@ -16,13 +16,13 @@ export default {
       newCount: this.myCount
     }
   },
-  props:['myCount'],
-  methods:{
-    updateCount(){
-      this.newCount++;
+  props: ['myCount'],
+  methods: {
+    updateCount () {
+      this.newCount++
     },
-    sendMessage(){
-      this.$emit('resiveMessage','liyi')
+    sendMessage () {
+      this.$emit('resiveMessage', 'liyi')
     }
   }
 }

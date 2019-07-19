@@ -1,8 +1,15 @@
 <template>
-  <div id="parent">
+  <div>
     parent组件
-    <p v-text="resiveData"></p>
-    <Child :my-count="count" @resiveMessage="showName"></Child>
+    <Child>
+      <template v-slot:header>
+        <p>header部分</p>
+      </template>
+      <p>主要内容</p>
+      <template v-slot:footer>
+        <p>footer部分</p>
+      </template>
+    </Child>
   </div>
 </template>
 
@@ -12,24 +19,16 @@ export default {
   name: 'Parent',
   data () {
     return {
-      count: 2,
-      resiveData: ''
     }
   },
   components: {
     Child
   },
   methods: {
-    showName (data) {
-      this.resiveData = data
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-#parent{
-  background: #888;
-}
 </style>

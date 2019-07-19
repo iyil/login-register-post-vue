@@ -2,16 +2,16 @@
   <div id="home">
     <ul class="nav">
       <li>
-        <router-link :to="{name: 'sendMessage'}">父子传参demo</router-link>
+        <router-link :to="{name: 'sendMessage'}">父子传参</router-link>
       </li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>
+        <router-link :to="{name: 'slot'}">插槽</router-link>
+      </li>
     </ul>
     <div class="content">
       <router-view></router-view>
     </div>
-    
+
   </div>
 </template>
 
@@ -36,10 +36,18 @@ export default {
     list-style: none;
     li{
       cursor: pointer;
+      width: 150px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: #ccc;
+      margin-bottom: 10px;
       a{
         text-decoration: none;
         color: #000;
-        background: #ccc;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
       }
     }
   }
